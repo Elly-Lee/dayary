@@ -9,7 +9,6 @@ public class MainController {
 
 	@GetMapping("/main")
 	public String showMain(Model model) {
-		model.addAttribute("time", System.currentTimeMillis());
-		return "main";
+		return "home/main";
 	}
 }

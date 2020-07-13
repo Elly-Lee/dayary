@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dayary.elly.dao.MemberDao">
+	
+	<resultMap id="memberSelectMap" type="Member">
+        <result property="id"			column="ID"/>
+        <result property="regDate"		column="REG_DATE"/>
+        <result property="loginId"		column="LOGIN_ID"/>
+        <result property="password"		column="PASSWORD"/>
+        <result property="nickName"		column="NICK_NAME"/>
+    </resultMap>
+    
+	<insert id="signUp">
+		INSERT INTO MEMBER(LOGIN_ID, PASSWORD, NICK_NAME)
+		VALUES(#{loginId},#{password},#{nickName})
+	</insert>
+     
+	<select id="getHashedPassword" resultMap="memberSelectMap">
+		SELECT ID, REG_DATE, LOGIN_ID, PASSWORD, NICK_NAME
+		FROM MEMBER
+		WHERE LOGIN_ID = #{loginId}
+	</select>
+
+
+</mapper>
