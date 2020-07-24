@@ -47,11 +47,9 @@ public class MemberSevice {
 			} else {// 비밀번호 불일치
 				data.put("status", Status.PASSWORD_MISMATCH);
 			}
-
 		}
 
 		return data;
-
 	}
 
 }

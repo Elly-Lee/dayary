@@ -16,6 +16,8 @@ public class DayaryInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		
+		String uri = request.getRequestURI();
+		
 		HttpSession session = request.getSession();
 		Member member = (Member) session.getAttribute("member");
 		

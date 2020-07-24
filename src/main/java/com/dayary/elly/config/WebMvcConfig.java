@@ -29,7 +29,8 @@ public class WebMvcConfig {
 			@Override
 			public void addInterceptors(InterceptorRegistry registry) {
 				registry.addInterceptor(dayaryInterceptor).addPathPatterns("/**")
-						.excludePathPatterns("/main", "/member/signUp", "/member/login", "/css/**", "/js/**");
+						.excludePathPatterns("/main", "/member/signUp", "/member/login",
+								"/css/**", "/js/**", "/favicon.ico", "/error");
 			}
 
 		};

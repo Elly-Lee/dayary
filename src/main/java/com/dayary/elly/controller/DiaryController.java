@@ -20,11 +20,11 @@ public class DiaryController {
 	private DiaryService diaryService;
 
 	@RequestMapping("/diary/list")
-	public String showList(Model model, HttpSession session) {
+	public String showList(Model model, Member member, HttpSession session) {
 		List<Diary> diarys = diaryService.getDiarys();
 		model.addAttribute("diarys", diarys);
 
-		Member member = (Member) session.getAttribute("member");
+		member = (Member) session.getAttribute("member");
 		model.addAttribute("member", member);
 
 		return "diary/list";

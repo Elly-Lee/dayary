@@ -54,7 +54,6 @@
 				}else{
 					alert(data.status.message);
 				}
-				
 			},
 			error:function(err){
 				console.log('/member/login');
